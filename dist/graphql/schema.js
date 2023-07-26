@@ -3,7 +3,7 @@ const typeDefs = `#graphql
         id: ID!
         code: Int!
         question: String!
-        date: Int!
+        date: Float!
         duration: Int!
         difficulty: String!
         solution: String!
@@ -12,7 +12,7 @@ const typeDefs = `#graphql
         leetcodes: [Leetcode]
     }
     type Mutation {
-        addLeetcode: Leetcode
+        addLeetcode(code: Int!, question: String!, date: Float!, duration: Int!, difficulty: String!, solution: String!): Leetcode
     }
 `;
 export default typeDefs;

@@ -11,12 +11,12 @@ interface LeetcodeInterface {
 
 const resolvers = {
     Query: {
-        leetcodes: (): Promise<LeetcodeInterface[]>  => {
-            return Leetcode.find();
+        leetcodes: async(): Promise<LeetcodeInterface[]>  => {
+            return await Leetcode.find();
         }
     },
     Mutation: {
-        addLeetcode: (parent, args: {
+        addLeetcode: async(parent, args: {
             code: number,
             question: string,
             date: number,
@@ -32,7 +32,7 @@ const resolvers = {
                 difficulty: args.difficulty, 
                 solution: args.solution
             });
-            return newLeetcode.save();
+            return await newLeetcode.save();
         }
     }
 }

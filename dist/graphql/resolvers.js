@@ -1,12 +1,12 @@
 import Leetcode from "../database/leetcodeModel.js";
 const resolvers = {
     Query: {
-        leetcodes: () => {
-            return Leetcode.find();
+        leetcodes: async () => {
+            return await Leetcode.find();
         }
     },
     Mutation: {
-        addLeetcode: (parent, args, contextValue) => {
+        addLeetcode: async (parent, args, contextValue) => {
             let newLeetcode = new Leetcode({
                 code: args.code,
                 question: args.question,
@@ -15,7 +15,7 @@ const resolvers = {
                 difficulty: args.difficulty,
                 solution: args.solution
             });
-            return newLeetcode.save();
+            return await newLeetcode.save();
         }
     }
 };
