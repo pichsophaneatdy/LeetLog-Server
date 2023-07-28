@@ -1,13 +1,14 @@
 import Leetcode from "../database/leetcodeModel.js";
 const resolvers = {
     Query: {
-        leetcodes: async () => {
-            return await Leetcode.find();
+        leetcodes: async (parent, args, contextValue) => {
+            return await Leetcode.find({ uid: args.uid });
         }
     },
     Mutation: {
         addLeetcode: async (parent, args, contextValue) => {
             let newLeetcode = new Leetcode({
+                uid: args.uid,
                 code: args.code,
                 question: args.question,
                 date: args.date,
