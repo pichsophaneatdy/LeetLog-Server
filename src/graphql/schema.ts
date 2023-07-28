@@ -1,6 +1,7 @@
 const typeDefs = `#graphql
     type Leetcode {
         id: ID!
+        uid: String!
         code: Int!
         question: String!
         date: Float!
@@ -9,10 +10,10 @@ const typeDefs = `#graphql
         solution: String!
     }
     type Query {
-        leetcodes: [Leetcode]
+        leetcodes(uid: ID!): [Leetcode]
     }
     type Mutation {
-        addLeetcode(code: Int!, question: String!, date: Float!, duration: Int!, difficulty: String!, solution: String!): Leetcode
+        addLeetcode(uid: ID!,code: Int!, question: String!, date: Float!, duration: Int!, difficulty: String!, solution: String!): Leetcode
     }
 `
 

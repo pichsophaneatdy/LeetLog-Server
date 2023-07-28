@@ -1,6 +1,7 @@
 import Leetcode from "../database/leetcodeModel.js";
 
 interface LeetcodeInterface {
+    uid: string,
     code: number,
     question: string,
     date: number,
@@ -11,12 +12,13 @@ interface LeetcodeInterface {
 
 const resolvers = {
     Query: {
-        leetcodes: async(): Promise<LeetcodeInterface[]>  => {
-            return await Leetcode.find();
+        leetcodes: async(parent, args: {uid: string}, contextValue): Promise<LeetcodeInterface[]>  => {
+            return await Leetcode.find({uid: args.uid});
         }
     },
     Mutation: {
         addLeetcode: async(parent, args: {
+            uid: string,
             code: number,
             question: string,
             date: number,
@@ -25,6 +27,7 @@ const resolvers = {
             solution: string
         },contextValue ) => {
             let newLeetcode = new Leetcode({
+                uid: args.uid,
                 code: args.code, 
                 question: args.question, 
                 date: args.date, 
