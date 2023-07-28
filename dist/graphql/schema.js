@@ -10,6 +10,7 @@ const typeDefs = `#graphql
         solution: String!
     }
     type Query {
+        leetcode(id: ID!): Leetcode
         leetcodes(uid: ID!): [Leetcode]
     }
     type Mutation {

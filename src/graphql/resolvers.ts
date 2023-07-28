@@ -12,6 +12,9 @@ interface LeetcodeInterface {
 
 const resolvers = {
     Query: {
+        leetcode: async(parent, args: {id: string}, contextValue): Promise<LeetcodeInterface[]> => {
+            return await Leetcode.findById(args.id)
+        },
         leetcodes: async(parent, args: {uid: string}, contextValue): Promise<LeetcodeInterface[]>  => {
             return await Leetcode.find({uid: args.uid});
         }

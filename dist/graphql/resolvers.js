@@ -1,6 +1,9 @@
 import Leetcode from "../database/leetcodeModel.js";
 const resolvers = {
     Query: {
+        leetcode: async (parent, args, contextValue) => {
+            return await Leetcode.findById(args.id);
+        },
         leetcodes: async (parent, args, contextValue) => {
             return await Leetcode.find({ uid: args.uid });
         }
