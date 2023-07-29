@@ -15,6 +15,7 @@ const typeDefs = `#graphql
     }
     type Mutation {
         addLeetcode(uid: ID!,code: Int!, question: String!, date: Float!, duration: Int!, difficulty: String!, solution: String!): Leetcode
+        deleteLeetcode(id:ID!): Leetcode
     }
 `
 

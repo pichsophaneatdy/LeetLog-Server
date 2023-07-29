@@ -39,6 +39,14 @@ const resolvers = {
                 solution: args.solution
             });
             return await newLeetcode.save();
+        },
+        deleteLeetcode: async(parent, args: {id: string}): Promise<LeetcodeInterface >=>{
+            try {
+                return await Leetcode.findByIdAndDelete(args.id)
+            } catch(error) {
+                console.log("Error deleting the element", error)
+            }
+            
         }
     }
 }
