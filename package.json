@@ -14,12 +14,12 @@
     "@apollo/server": "^4.8.1",
     "dotenv": "^16.3.1",
     "graphql": "^16.7.1",
-    "mongoose": "^7.4.1",
-    "rimraf": "^5.0.1"
+    "mongoose": "^7.4.1"
   },
   "type": "module",
   "devDependencies": {
     "@types/node": "^20.4.5",
+    "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
   }
 }
