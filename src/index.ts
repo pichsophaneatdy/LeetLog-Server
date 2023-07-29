@@ -20,7 +20,7 @@ const startServer = async() => {
         });
         // Start the server
         const {url} = await startStandaloneServer(server, {
-            listen: {port:4000}
+            listen: {port: parseInt(process.env.PORT) || 4000}
         })
         console.log(`🚀 Connected to Database and Server ready at: ${url}`);
     } catch(error) {
