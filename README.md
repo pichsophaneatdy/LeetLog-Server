@@ -20,7 +20,7 @@ LeetCode is a popular platform for practicing coding problems, and as users solv
 
 ### Backend
 
-Link to Backend Repository: ***https://github.com/pichsophaneatdy/Leetlog***
+Link to Frontend Repository: ***https://github.com/pichsophaneatdy/Leetlog***
 <ul>
   <li>TypeScript</li>
   <li>Node</li>
