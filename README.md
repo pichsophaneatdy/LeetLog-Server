@@ -41,6 +41,45 @@ Link to Backend Repository: ***https://github.com/pichsophaneatdy/Leetlog***
 </li>
 </ul>
 
+## Installation
+1. Clone the repository to your local machine:
+
+```
+git clone https://github.com/pichsophaneatdy/Leetlog-Server.git
+```
+2. Navigate to the project directory
+
+```
+cd LeetLog-server
+```
+
+3. Install the required dependencies:
+
+```
+npm install
+```
+
+## Configuration
+
+1. Create a .env file in the root directory of the project
+2. Set the environment variables in the `.env` file
+
+```
+MONGODB_URI=your-mongodb-connection-string
+```
+
+Replace `your-mongodb-connection-string` with your MongoDB connection string.
+
+## Running the App
+
+To start the app, run the following command:
+
+```
+npm start
+```
+
+The Apollo Server will start running at http://localhost:4000/.
+
 
 ## Check out the screenshots
 
