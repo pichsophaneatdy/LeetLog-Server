@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf ./dist && tsc",
-    "start": "npm run build && node dist/index.js"
+    "compile": "tsc",
+    "start": "npm run compile && node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
@@ -19,7 +19,6 @@
   "type": "module",
   "devDependencies": {
     "@types/node": "^20.4.5",
-    "rimraf": "^5.0.1",
     "typescript": "^5.1.6"
   }
 }
